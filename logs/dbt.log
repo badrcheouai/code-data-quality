@@ -1,0 +1,567 @@
+[0m12:18:33.666741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001363ED9C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001363F770CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001363FD87ED0>]}
+
+
+============================== 12:18:33.673324 | f3eb0b6c-e251-4a23-85f5-d62096e6e801 ==============================
+[0m12:18:33.673324 [info ] [MainThread]: Running with dbt=1.10.13
+[0m12:18:33.674543 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'no_print': 'None', 'use_colors': 'True', 'log_format': 'default', 'target_path': 'None', 'warn_error': 'None', 'static_parser': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'C:\\Users\\bahit\\Desktop\\bank_dq_lab\\logs', 'use_experimental_parser': 'False', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\bahit\\Desktop\\bank_dq_lab', 'invocation_command': 'dbt run', 'printer_width': '80', 'write_json': 'True'}
+[0m12:18:34.021314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f3eb0b6c-e251-4a23-85f5-d62096e6e801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001363F139A70>]}
+[0m12:18:34.116933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f3eb0b6c-e251-4a23-85f5-d62096e6e801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001363FC82BE0>]}
+[0m12:18:34.120746 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m12:18:34.559086 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m12:18:34.754712 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m12:18:34.755875 [debug] [MainThread]: Partial parsing: updated file: bank_dq_lab://macros\uniqueness.sql
+[0m12:18:35.123917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f3eb0b6c-e251-4a23-85f5-d62096e6e801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000136412ED850>]}
+[0m12:18:35.210614 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\bahit\Desktop\bank_dq_lab\target\manifest.json
+[0m12:18:35.214423 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\bahit\Desktop\bank_dq_lab\target\semantic_manifest.json
+[0m12:18:35.252607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f3eb0b6c-e251-4a23-85f5-d62096e6e801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001363FE13110>]}
+[0m12:18:35.253326 [info ] [MainThread]: Found 2 models, 2 seeds, 448 macros
+[0m12:18:35.254232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f3eb0b6c-e251-4a23-85f5-d62096e6e801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001363FC6E970>]}
+[0m12:18:35.256720 [info ] [MainThread]: 
+[0m12:18:35.257649 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:18:35.258412 [info ] [MainThread]: 
+[0m12:18:35.259708 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:18:35.266550 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_bank'
+[0m12:18:35.466830 [debug] [ThreadPool]: Using duckdb connection "list_bank"
+[0m12:18:35.467463 [debug] [ThreadPool]: On list_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "connection_name": "list_bank"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"bank"'
+    
+  
+  
+[0m12:18:35.467999 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:18:35.483891 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m12:18:35.486320 [debug] [ThreadPool]: On list_bank: Close
+[0m12:18:35.487619 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_bank, now create_bank_main)
+[0m12:18:35.488348 [debug] [ThreadPool]: Creating schema "database: "bank"
+schema: "main"
+"
+[0m12:18:35.497159 [debug] [ThreadPool]: Using duckdb connection "create_bank_main"
+[0m12:18:35.497675 [debug] [ThreadPool]: On create_bank_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "connection_name": "create_bank_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='bank'
+        and type='sqlite'
+    
+  
+[0m12:18:35.498132 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:18:35.499411 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:18:35.501260 [debug] [ThreadPool]: Using duckdb connection "create_bank_main"
+[0m12:18:35.501736 [debug] [ThreadPool]: On create_bank_main: BEGIN
+[0m12:18:35.502492 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:18:35.502937 [debug] [ThreadPool]: Using duckdb connection "create_bank_main"
+[0m12:18:35.503342 [debug] [ThreadPool]: On create_bank_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "connection_name": "create_bank_main"} */
+
+    
+    
+        create schema if not exists "bank"."main"
+    
+[0m12:18:35.504083 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:18:35.505330 [debug] [ThreadPool]: On create_bank_main: COMMIT
+[0m12:18:35.505787 [debug] [ThreadPool]: Using duckdb connection "create_bank_main"
+[0m12:18:35.506190 [debug] [ThreadPool]: On create_bank_main: COMMIT
+[0m12:18:35.506823 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:18:35.507329 [debug] [ThreadPool]: On create_bank_main: Close
+[0m12:18:35.509903 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_bank_main'
+[0m12:18:35.517916 [debug] [ThreadPool]: Using duckdb connection "list_bank_main"
+[0m12:18:35.518457 [debug] [ThreadPool]: On list_bank_main: BEGIN
+[0m12:18:35.518866 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:18:35.519627 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:18:35.520070 [debug] [ThreadPool]: Using duckdb connection "list_bank_main"
+[0m12:18:35.520514 [debug] [ThreadPool]: On list_bank_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "connection_name": "list_bank_main"} */
+select
+      'bank' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'bank'
+  
+[0m12:18:35.567892 [debug] [ThreadPool]: SQL status: OK in 0.047 seconds
+[0m12:18:35.570085 [debug] [ThreadPool]: On list_bank_main: ROLLBACK
+[0m12:18:35.572379 [debug] [ThreadPool]: Failed to rollback 'list_bank_main'
+[0m12:18:35.572888 [debug] [ThreadPool]: On list_bank_main: Close
+[0m12:18:35.574981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f3eb0b6c-e251-4a23-85f5-d62096e6e801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000136416DF860>]}
+[0m12:18:35.575781 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:18:35.576249 [debug] [MainThread]: On master: BEGIN
+[0m12:18:35.576677 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:18:35.577465 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:18:35.578039 [debug] [MainThread]: On master: COMMIT
+[0m12:18:35.578445 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:18:35.578835 [debug] [MainThread]: On master: COMMIT
+[0m12:18:35.579447 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:18:35.579935 [debug] [MainThread]: On master: Close
+[0m12:18:35.590443 [debug] [Thread-1 (]: Began running node model.bank_dq_lab.stg_bank
+[0m12:18:35.591259 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_bank ...................................... [RUN]
+[0m12:18:35.592288 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.bank_dq_lab.stg_bank'
+[0m12:18:35.592796 [debug] [Thread-1 (]: Began compiling node model.bank_dq_lab.stg_bank
+[0m12:18:35.600857 [debug] [Thread-1 (]: Writing injected SQL for node "model.bank_dq_lab.stg_bank"
+[0m12:18:35.602333 [debug] [Thread-1 (]: Began executing node model.bank_dq_lab.stg_bank
+[0m12:18:35.646443 [debug] [Thread-1 (]: Writing runtime sql for node "model.bank_dq_lab.stg_bank"
+[0m12:18:35.648295 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:18:35.648896 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: BEGIN
+[0m12:18:35.649400 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m12:18:35.650590 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:18:35.651133 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:18:35.651620 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.stg_bank"} */
+
+  
+  create view "bank"."main"."stg_bank__dbt_tmp" as (
+    -- Reads a CSV; uses DuckDB's read_csv_auto (semicolon for UCI Bank Marketing)
+SELECT *
+FROM read_csv_auto('data/bank.csv', header=True, delim=';')
+  );
+
+[0m12:18:35.655945 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:18:35.664127 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:18:35.664763 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.stg_bank"} */
+alter view "bank"."main"."stg_bank" rename to "stg_bank__dbt_backup"
+[0m12:18:35.665767 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:18:35.669318 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:18:35.669892 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.stg_bank"} */
+alter view "bank"."main"."stg_bank__dbt_tmp" rename to "stg_bank"
+[0m12:18:35.670811 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:18:35.688252 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: COMMIT
+[0m12:18:35.688850 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:18:35.689343 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: COMMIT
+[0m12:18:35.693023 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:18:35.700153 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:18:35.700745 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.stg_bank"} */
+
+      drop view if exists "bank"."main"."stg_bank__dbt_backup" cascade
+    
+[0m12:18:35.702606 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:18:35.706095 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: Close
+[0m12:18:35.708796 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f3eb0b6c-e251-4a23-85f5-d62096e6e801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013641745910>]}
+[0m12:18:35.709740 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.stg_bank ................................. [[32mOK[0m in 0.11s]
+[0m12:18:35.710983 [debug] [Thread-1 (]: Finished running node model.bank_dq_lab.stg_bank
+[0m12:18:35.712206 [debug] [Thread-2 (]: Began running node model.bank_dq_lab.dq_dashboard
+[0m12:18:35.712987 [info ] [Thread-2 (]: 2 of 2 START sql table model main.dq_dashboard ................................. [RUN]
+[0m12:18:35.714124 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.bank_dq_lab.dq_dashboard'
+[0m12:18:35.714675 [debug] [Thread-2 (]: Began compiling node model.bank_dq_lab.dq_dashboard
+[0m12:18:35.719844 [debug] [Thread-2 (]: Writing injected SQL for node "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.721566 [debug] [Thread-2 (]: Began executing node model.bank_dq_lab.dq_dashboard
+[0m12:18:35.749697 [debug] [Thread-2 (]: Writing runtime sql for node "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.751648 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.752265 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: BEGIN
+[0m12:18:35.752750 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:18:35.753706 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:18:35.754227 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.754737 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+
+  
+    
+    
+
+    create  table
+      "bank"."main"."dq_dashboard__dbt_tmp"
+  
+    as (
+      
+
+WITH base AS (
+  SELECT * FROM "bank"."main"."stg_bank"
+),
+age_completeness AS (
+  
+SELECT 
+  1.0 - (SUM(CASE WHEN age IS NULL OR CAST(age AS VARCHAR) = '' THEN 1 ELSE 0 END) * 1.0 / COUNT(*)) 
+  AS completeness_score
+FROM base
+
+),
+job_validity AS (
+  
+SELECT 
+  SUM(CASE WHEN CAST(job AS VARCHAR) ~ '^[A-Za-z ]+$' THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS validity_score
+FROM base
+
+),
+contact_uniqueness AS (
+  
+SELECT 
+  1.0 - ((COUNT(*) - COUNT(DISTINCT contact)) * 1.0 / COUNT(*)) AS uniqueness_score
+FROM base
+
+),
+loan_consistency AS (
+  
+SELECT 
+  SUM(CASE WHEN housing = loan THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS consistency_score
+FROM base
+
+)
+SELECT 
+  age_completeness.completeness_score AS age_completeness,
+  job_validity.validity_score AS job_validity,
+  contact_uniqueness.uniqueness_score AS contact_uniqueness,
+  loan_consistency.consistency_score AS loan_consistency
+FROM age_completeness
+CROSS JOIN job_validity
+CROSS JOIN contact_uniqueness
+CROSS JOIN loan_consistency
+    );
+  
+  
+[0m12:18:35.771005 [debug] [Thread-2 (]: SQL status: OK in 0.016 seconds
+[0m12:18:35.780201 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.781052 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'dq_dashboard'
+  
+[0m12:18:35.782567 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:18:35.784506 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.785142 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'dq_dashboard'
+  
+[0m12:18:35.786405 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:18:35.790471 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.791053 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+alter table "bank"."main"."dq_dashboard" rename to "dq_dashboard__dbt_backup"
+[0m12:18:35.792121 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:18:35.796256 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.796846 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+alter table "bank"."main"."dq_dashboard__dbt_tmp" rename to "dq_dashboard"
+[0m12:18:35.797843 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:18:35.804575 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: COMMIT
+[0m12:18:35.805194 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.805703 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: COMMIT
+[0m12:18:35.807878 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:18:35.810597 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:18:35.811201 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+
+      drop table if exists "bank"."main"."dq_dashboard__dbt_backup" cascade
+    
+[0m12:18:35.813022 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:18:35.814930 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: Close
+[0m12:18:35.815811 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f3eb0b6c-e251-4a23-85f5-d62096e6e801', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000136418DC100>]}
+[0m12:18:35.816740 [info ] [Thread-2 (]: 2 of 2 OK created sql table model main.dq_dashboard ............................ [[32mOK[0m in 0.10s]
+[0m12:18:35.818003 [debug] [Thread-2 (]: Finished running node model.bank_dq_lab.dq_dashboard
+[0m12:18:35.820208 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:18:35.820690 [debug] [MainThread]: On master: BEGIN
+[0m12:18:35.821119 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:18:35.821858 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:18:35.822313 [debug] [MainThread]: On master: COMMIT
+[0m12:18:35.822702 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:18:35.823084 [debug] [MainThread]: On master: COMMIT
+[0m12:18:35.823725 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:18:35.824189 [debug] [MainThread]: On master: Close
+[0m12:18:35.824724 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:18:35.825135 [debug] [MainThread]: Connection 'create_bank_main' was properly closed.
+[0m12:18:35.825481 [debug] [MainThread]: Connection 'list_bank_main' was properly closed.
+[0m12:18:35.825814 [debug] [MainThread]: Connection 'model.bank_dq_lab.stg_bank' was properly closed.
+[0m12:18:35.826202 [debug] [MainThread]: Connection 'model.bank_dq_lab.dq_dashboard' was properly closed.
+[0m12:18:35.826616 [info ] [MainThread]: 
+[0m12:18:35.827280 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.57 seconds (0.57s).
+[0m12:18:35.828464 [debug] [MainThread]: Command end result
+[0m12:18:35.854909 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\bahit\Desktop\bank_dq_lab\target\manifest.json
+[0m12:18:35.858640 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\bahit\Desktop\bank_dq_lab\target\semantic_manifest.json
+[0m12:18:35.868322 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\bahit\Desktop\bank_dq_lab\target\run_results.json
+[0m12:18:35.868895 [info ] [MainThread]: 
+[0m12:18:35.869789 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:18:35.870614 [info ] [MainThread]: 
+[0m12:18:35.871486 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m12:18:35.873120 [debug] [MainThread]: Command `dbt run` succeeded at 12:18:35.872940 after 2.41 seconds
+[0m12:18:35.873717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001363FD3F930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001364129AE70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013641314F50>]}
+[0m12:18:35.874270 [debug] [MainThread]: Flushing usage events
+[0m12:18:36.940687 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:22:09.289715 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F28503C590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F285A0CCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F286024050>]}
+
+
+============================== 12:22:09.296631 | ff6fa20e-96ca-416a-80d8-6069cefba053 ==============================
+[0m12:22:09.296631 [info ] [MainThread]: Running with dbt=1.10.13
+[0m12:22:09.297553 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'printer_width': '80', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'log_path': 'C:\\Users\\bahit\\Desktop\\bank_dq_lab\\logs', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\bahit\\Desktop\\bank_dq_lab', 'use_colors': 'True', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m12:22:09.650916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ff6fa20e-96ca-416a-80d8-6069cefba053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2853D9A70>]}
+[0m12:22:09.749578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ff6fa20e-96ca-416a-80d8-6069cefba053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F285F22CF0>]}
+[0m12:22:09.753378 [info ] [MainThread]: Registered adapter: duckdb=1.9.6
+[0m12:22:10.213383 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m12:22:10.416163 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m12:22:10.417152 [debug] [MainThread]: Partial parsing: updated file: bank_dq_lab://data\sample_bank.csv
+[0m12:22:10.417811 [debug] [MainThread]: Partial parsing: updated file: bank_dq_lab://data\bank.csv
+[0m12:22:10.732264 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ff6fa20e-96ca-416a-80d8-6069cefba053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2875F1550>]}
+[0m12:22:10.824432 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\bahit\Desktop\bank_dq_lab\target\manifest.json
+[0m12:22:10.828780 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\bahit\Desktop\bank_dq_lab\target\semantic_manifest.json
+[0m12:22:10.864245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ff6fa20e-96ca-416a-80d8-6069cefba053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2858F3A70>]}
+[0m12:22:10.864990 [info ] [MainThread]: Found 2 models, 2 seeds, 448 macros
+[0m12:22:10.865594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ff6fa20e-96ca-416a-80d8-6069cefba053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F287783E70>]}
+[0m12:22:10.868174 [info ] [MainThread]: 
+[0m12:22:10.868802 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:22:10.869259 [info ] [MainThread]: 
+[0m12:22:10.870142 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:22:10.877201 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_bank'
+[0m12:22:11.011454 [debug] [ThreadPool]: Using duckdb connection "list_bank"
+[0m12:22:11.012567 [debug] [ThreadPool]: On list_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "connection_name": "list_bank"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"bank"'
+    
+  
+  
+[0m12:22:11.013032 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:22:11.028573 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m12:22:11.031019 [debug] [ThreadPool]: On list_bank: Close
+[0m12:22:11.032344 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_bank, now create_bank_main)
+[0m12:22:11.033138 [debug] [ThreadPool]: Creating schema "database: "bank"
+schema: "main"
+"
+[0m12:22:11.042185 [debug] [ThreadPool]: Using duckdb connection "create_bank_main"
+[0m12:22:11.042699 [debug] [ThreadPool]: On create_bank_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "connection_name": "create_bank_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='bank'
+        and type='sqlite'
+    
+  
+[0m12:22:11.043156 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:22:11.044706 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:22:11.047115 [debug] [ThreadPool]: Using duckdb connection "create_bank_main"
+[0m12:22:11.047600 [debug] [ThreadPool]: On create_bank_main: BEGIN
+[0m12:22:11.048326 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:22:11.048775 [debug] [ThreadPool]: Using duckdb connection "create_bank_main"
+[0m12:22:11.049208 [debug] [ThreadPool]: On create_bank_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "connection_name": "create_bank_main"} */
+
+    
+    
+        create schema if not exists "bank"."main"
+    
+[0m12:22:11.049958 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:22:11.051267 [debug] [ThreadPool]: On create_bank_main: COMMIT
+[0m12:22:11.051820 [debug] [ThreadPool]: Using duckdb connection "create_bank_main"
+[0m12:22:11.052286 [debug] [ThreadPool]: On create_bank_main: COMMIT
+[0m12:22:11.052900 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:22:11.053358 [debug] [ThreadPool]: On create_bank_main: Close
+[0m12:22:11.055998 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_bank_main'
+[0m12:22:11.064048 [debug] [ThreadPool]: Using duckdb connection "list_bank_main"
+[0m12:22:11.064926 [debug] [ThreadPool]: On list_bank_main: BEGIN
+[0m12:22:11.065466 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:22:11.066345 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:22:11.066862 [debug] [ThreadPool]: Using duckdb connection "list_bank_main"
+[0m12:22:11.067267 [debug] [ThreadPool]: On list_bank_main: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "connection_name": "list_bank_main"} */
+select
+      'bank' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'bank'
+  
+[0m12:22:11.114418 [debug] [ThreadPool]: SQL status: OK in 0.047 seconds
+[0m12:22:11.195401 [debug] [ThreadPool]: On list_bank_main: ROLLBACK
+[0m12:22:11.198070 [debug] [ThreadPool]: Failed to rollback 'list_bank_main'
+[0m12:22:11.198626 [debug] [ThreadPool]: On list_bank_main: Close
+[0m12:22:11.201087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ff6fa20e-96ca-416a-80d8-6069cefba053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F281FB8600>]}
+[0m12:22:11.201871 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:22:11.202360 [debug] [MainThread]: On master: BEGIN
+[0m12:22:11.202802 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:22:11.203646 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:22:11.204115 [debug] [MainThread]: On master: COMMIT
+[0m12:22:11.204554 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:22:11.204979 [debug] [MainThread]: On master: COMMIT
+[0m12:22:11.205748 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:22:11.206230 [debug] [MainThread]: On master: Close
+[0m12:22:11.217824 [debug] [Thread-1 (]: Began running node model.bank_dq_lab.stg_bank
+[0m12:22:11.218775 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_bank ...................................... [RUN]
+[0m12:22:11.219630 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.bank_dq_lab.stg_bank'
+[0m12:22:11.220161 [debug] [Thread-1 (]: Began compiling node model.bank_dq_lab.stg_bank
+[0m12:22:11.228871 [debug] [Thread-1 (]: Writing injected SQL for node "model.bank_dq_lab.stg_bank"
+[0m12:22:11.231070 [debug] [Thread-1 (]: Began executing node model.bank_dq_lab.stg_bank
+[0m12:22:11.275270 [debug] [Thread-1 (]: Writing runtime sql for node "model.bank_dq_lab.stg_bank"
+[0m12:22:11.277210 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:22:11.277815 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: BEGIN
+[0m12:22:11.278319 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m12:22:11.279587 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.280353 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:22:11.280899 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.stg_bank"} */
+
+  
+  create view "bank"."main"."stg_bank__dbt_tmp" as (
+    -- Reads a CSV; uses DuckDB's read_csv_auto (semicolon for UCI Bank Marketing)
+SELECT *
+FROM read_csv_auto('data/bank.csv', header=True, delim=';')
+  );
+
+[0m12:22:11.285558 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:22:11.294966 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:22:11.296008 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.stg_bank"} */
+alter view "bank"."main"."stg_bank" rename to "stg_bank__dbt_backup"
+[0m12:22:11.297074 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:22:11.301598 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:22:11.302184 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.stg_bank"} */
+alter view "bank"."main"."stg_bank__dbt_tmp" rename to "stg_bank"
+[0m12:22:11.303185 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:22:11.321014 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: COMMIT
+[0m12:22:11.321751 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:22:11.322266 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: COMMIT
+[0m12:22:11.326114 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:22:11.334465 [debug] [Thread-1 (]: Using duckdb connection "model.bank_dq_lab.stg_bank"
+[0m12:22:11.335162 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.stg_bank"} */
+
+      drop view if exists "bank"."main"."stg_bank__dbt_backup" cascade
+    
+[0m12:22:11.337185 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.340599 [debug] [Thread-1 (]: On model.bank_dq_lab.stg_bank: Close
+[0m12:22:11.343310 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ff6fa20e-96ca-416a-80d8-6069cefba053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F287879F10>]}
+[0m12:22:11.344336 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.stg_bank ................................. [[32mOK[0m in 0.12s]
+[0m12:22:11.345501 [debug] [Thread-1 (]: Finished running node model.bank_dq_lab.stg_bank
+[0m12:22:11.346885 [debug] [Thread-2 (]: Began running node model.bank_dq_lab.dq_dashboard
+[0m12:22:11.347666 [info ] [Thread-2 (]: 2 of 2 START sql table model main.dq_dashboard ................................. [RUN]
+[0m12:22:11.348548 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.bank_dq_lab.dq_dashboard'
+[0m12:22:11.349077 [debug] [Thread-2 (]: Began compiling node model.bank_dq_lab.dq_dashboard
+[0m12:22:11.360435 [debug] [Thread-2 (]: Writing injected SQL for node "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.363159 [debug] [Thread-2 (]: Began executing node model.bank_dq_lab.dq_dashboard
+[0m12:22:11.390883 [debug] [Thread-2 (]: Writing runtime sql for node "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.393048 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.393662 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: BEGIN
+[0m12:22:11.394165 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:22:11.395139 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.395712 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.396317 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+
+  
+    
+    
+
+    create  table
+      "bank"."main"."dq_dashboard__dbt_tmp"
+  
+    as (
+      
+
+WITH base AS (
+  SELECT * FROM "bank"."main"."stg_bank"
+),
+age_completeness AS (
+  
+SELECT 
+  1.0 - (SUM(CASE WHEN age IS NULL OR CAST(age AS VARCHAR) = '' THEN 1 ELSE 0 END) * 1.0 / COUNT(*)) 
+  AS completeness_score
+FROM base
+
+),
+job_validity AS (
+  
+SELECT 
+  SUM(CASE WHEN CAST(job AS VARCHAR) ~ '^[A-Za-z ]+$' THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS validity_score
+FROM base
+
+),
+contact_uniqueness AS (
+  
+SELECT 
+  1.0 - ((COUNT(*) - COUNT(DISTINCT contact)) * 1.0 / COUNT(*)) AS uniqueness_score
+FROM base
+
+),
+loan_consistency AS (
+  
+SELECT 
+  SUM(CASE WHEN housing = loan THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS consistency_score
+FROM base
+
+)
+SELECT 
+  age_completeness.completeness_score AS age_completeness,
+  job_validity.validity_score AS job_validity,
+  contact_uniqueness.uniqueness_score AS contact_uniqueness,
+  loan_consistency.consistency_score AS loan_consistency
+FROM age_completeness
+CROSS JOIN job_validity
+CROSS JOIN contact_uniqueness
+CROSS JOIN loan_consistency
+    );
+  
+  
+[0m12:22:11.413681 [debug] [Thread-2 (]: SQL status: OK in 0.017 seconds
+[0m12:22:11.422023 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.422696 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'dq_dashboard'
+  
+[0m12:22:11.424132 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.425954 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.426520 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'dq_dashboard'
+  
+[0m12:22:11.427983 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.432902 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.433517 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+alter table "bank"."main"."dq_dashboard" rename to "dq_dashboard__dbt_backup"
+[0m12:22:11.434601 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.438157 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.438714 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+alter table "bank"."main"."dq_dashboard__dbt_tmp" rename to "dq_dashboard"
+[0m12:22:11.439801 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.447031 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: COMMIT
+[0m12:22:11.447752 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.448303 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: COMMIT
+[0m12:22:11.450267 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.453288 [debug] [Thread-2 (]: Using duckdb connection "model.bank_dq_lab.dq_dashboard"
+[0m12:22:11.453868 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "bank_dq_lab", "target_name": "dev", "node_id": "model.bank_dq_lab.dq_dashboard"} */
+
+      drop table if exists "bank"."main"."dq_dashboard__dbt_backup" cascade
+    
+[0m12:22:11.455634 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:22:11.458135 [debug] [Thread-2 (]: On model.bank_dq_lab.dq_dashboard: Close
+[0m12:22:11.458940 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ff6fa20e-96ca-416a-80d8-6069cefba053', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2877D7EE0>]}
+[0m12:22:11.459926 [info ] [Thread-2 (]: 2 of 2 OK created sql table model main.dq_dashboard ............................ [[32mOK[0m in 0.11s]
+[0m12:22:11.460893 [debug] [Thread-2 (]: Finished running node model.bank_dq_lab.dq_dashboard
+[0m12:22:11.463730 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:22:11.464262 [debug] [MainThread]: On master: BEGIN
+[0m12:22:11.464689 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:22:11.465553 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:22:11.466017 [debug] [MainThread]: On master: COMMIT
+[0m12:22:11.466426 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:22:11.466805 [debug] [MainThread]: On master: COMMIT
+[0m12:22:11.467502 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:22:11.467960 [debug] [MainThread]: On master: Close
+[0m12:22:11.468506 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:22:11.468892 [debug] [MainThread]: Connection 'create_bank_main' was properly closed.
+[0m12:22:11.469253 [debug] [MainThread]: Connection 'list_bank_main' was properly closed.
+[0m12:22:11.469587 [debug] [MainThread]: Connection 'model.bank_dq_lab.stg_bank' was properly closed.
+[0m12:22:11.470055 [debug] [MainThread]: Connection 'model.bank_dq_lab.dq_dashboard' was properly closed.
+[0m12:22:11.470541 [info ] [MainThread]: 
+[0m12:22:11.471057 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 0.60 seconds (0.60s).
+[0m12:22:11.472227 [debug] [MainThread]: Command end result
+[0m12:22:11.501036 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\bahit\Desktop\bank_dq_lab\target\manifest.json
+[0m12:22:11.504914 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\bahit\Desktop\bank_dq_lab\target\semantic_manifest.json
+[0m12:22:11.514461 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\bahit\Desktop\bank_dq_lab\target\run_results.json
+[0m12:22:11.515066 [info ] [MainThread]: 
+[0m12:22:11.515658 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:22:11.516166 [info ] [MainThread]: 
+[0m12:22:11.516666 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m12:22:11.518017 [debug] [MainThread]: Command `dbt run` succeeded at 12:22:11.517823 after 2.44 seconds
+[0m12:22:11.518604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F2874042D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F287887A40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F282BF1F50>]}
+[0m12:22:11.519154 [debug] [MainThread]: Flushing usage events
+[0m12:22:15.415575 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,8 @@
+bank_dq_lab:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ./bank.duckdb
+      threads: 4
+

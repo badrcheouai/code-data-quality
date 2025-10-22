@@ -1,0 +1,13 @@
+name: 'bank_dq_lab'
+version: '1.0.0'
+config-version: 2
+
+profile: 'bank_dq_lab'
+
+model-paths: ['models']
+macro-paths: ['macros']
+seed-paths: ['data']
+
+models:
+  bank_dq_lab:
+    +materialized: view

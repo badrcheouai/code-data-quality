@@ -1,0 +1,1 @@
+{"_invocation_id": "ff6fa20e-96ca-416a-80d8-6069cefba053", "linked": {"0": {"name": "model.bank_dq_lab.stg_bank", "type": "model", "succ": [1]}, "1": {"name": "model.bank_dq_lab.dq_dashboard", "type": "model"}, "2": {"name": "seed.bank_dq_lab.sample_bank", "type": "seed"}, "3": {"name": "seed.bank_dq_lab.bank", "type": "seed"}}}
